@@ -182,6 +182,40 @@ const Dashboard = () => {
               </Paper>
             </Grid>
 
+{/* Action Buttons with Icons */}
+<Grid item xs={12} md={6}>
+              <Paper style={{ padding: '16px' }}>
+                <Typography variant="h6">Actions</Typography>
+                <IconButton onClick={handleAddClick} aria-label="add">
+                  <AddIcon />
+                </IconButton>
+                <IconButton onClick={handleRemoveClick} aria-label="remove">
+                  <RemoveIcon />
+                </IconButton>
+              </Paper>
+            </Grid>
 
+            {/* Recent Activities Section */}
+            <Grid item xs={12} md={6}>
+              <Paper style={{ padding: '16px' }}>
+                <Typography variant="h6">Recent Activities</Typography>
+                <List>
+                  {activities.map((activity, index) => (
+                    <ListItem key={index}>
+                      <ListItemText primary={activity} />
+                    </ListItem>
+                  ))}
+                </List>
+              </Paper>
+            </Grid>
+
+          </Grid>
+        </Container>
+      </Box>
+    </Box>
+  );
+};
+
+export default Dashboard;
            
     
