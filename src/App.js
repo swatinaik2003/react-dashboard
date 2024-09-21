@@ -168,6 +168,20 @@ const Dashboard = () => {
                 </ResponsiveContainer>
               </Paper>
             </Grid>
+            {/* Line Chart Section */}
+            <Grid item xs={12}>
+              <Paper style={{ padding: '16px' }}>
+                <Typography variant="h6">Budget vs Expenses</Typography>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={data}>
+                    <Line type="monotone" dataKey="revenue" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="expenses" stroke="#82ca9d" />
+                    <Tooltip />
+                  </LineChart>
+                </ResponsiveContainer>
+              </Paper>
+            </Grid>
+
 
            
     
