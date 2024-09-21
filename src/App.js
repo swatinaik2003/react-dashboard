@@ -30,3 +30,71 @@ const activities = [
   'New customer sign-up: Maria Garcia',
 ];
 
+// Sidebar content
+const sidebarItems = [
+  { text: 'Dashboard', icon: <DashboardIcon /> },
+  { text: 'Analytics', icon: <AnalyticsIcon /> },
+  { text: 'Sales', icon: <BarChartIcon /> },
+  { text: 'Reports', icon: <ReportIcon /> },
+  { text: 'Settings', icon: <SettingsIcon /> },
+];
+
+const drawerWidth = 240;
+
+const Sidebar = () => (
+  <Drawer
+    variant="permanent"
+    sx={{
+      width: drawerWidth,
+      flexShrink: 0,
+      '& .MuiDrawer-paper': {
+        width: drawerWidth,
+        boxSizing: 'border-box',
+        backgroundColor: '#1e88e5', // Set blue color for sidebar background
+        color: 'white', // Set text color to white
+        height: '100vh', // Make sidebar full height
+      },
+    }}
+  >
+    <Box sx={{ overflow: 'auto', height: '100vh' }}>
+      <Typography variant="h5" sx={{ padding: '16px', color: 'white' }}>
+        Menu
+      </Typography>
+      <Divider sx={{ backgroundColor: 'white' }} />
+      <List>
+        {sidebarItems.map((item, index) => (
+          <ListItem
+            button
+            key={index}
+            sx={{
+              '&:hover': {
+                backgroundColor: '#1565c0', // Darker blue on hover
+              },
+              color: 'white',
+            }}
+          >
+            <ListItemIcon sx={{ color: 'white' }}>
+              <IconButton sx={{ color: 'white' }}>
+                {item.icon}
+              </IconButton>
+            </ListItemIcon>
+            <ListItemText primary={item.text} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  </Drawer>
+);
+
+const Dashboard = () => {
+  const handleAddClick = () => {
+    // Handle the Add click event
+    alert("Add action");
+  };
+
+  const handleRemoveClick = () => {
+    // Handle the Remove click event
+    alert("Remove action");
+  };
+
+  
