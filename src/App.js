@@ -10,7 +10,7 @@ import ReportIcon from '@mui/icons-material/Report';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 
-onst data = [
+const data = [
   { name: 'Jan', revenue: 4000, expenses: 2400 },
   { name: 'Feb', revenue: 3000, expenses: 1398 },
   { name: 'Mar', revenue: 2000, expenses: 9800 },
@@ -147,7 +147,7 @@ const Dashboard = () => {
                   <PieChart>
                     <Pie data={data} dataKey="revenue" outerRadius={100}>
                       {data.map((entry, index) => (
-                        <Cell key={cell-${index}} fill={index % 2 === 0 ? '#8884d8' : '#82ca9d'} />
+                        <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#8884d8' : '#82ca9d'} />
                       ))}
                     </Pie>
                     <Tooltip />
@@ -155,8 +155,9 @@ const Dashboard = () => {
                 </ResponsiveContainer>
               </Paper>
             </Grid>
-{/* Bar Chart Section */}
-<Grid item xs={12} md={6}>
+
+            {/* Bar Chart Section */}
+            <Grid item xs={12} md={6}>
               <Paper style={{ padding: '16px' }}>
                 <Typography variant="h6">Revenue vs Expenses</Typography>
                 <ResponsiveContainer width="100%" height={300}>
@@ -168,6 +169,7 @@ const Dashboard = () => {
                 </ResponsiveContainer>
               </Paper>
             </Grid>
+
             {/* Line Chart Section */}
             <Grid item xs={12}>
               <Paper style={{ padding: '16px' }}>
@@ -182,8 +184,8 @@ const Dashboard = () => {
               </Paper>
             </Grid>
 
-{/* Action Buttons with Icons */}
-<Grid item xs={12} md={6}>
+            {/* Action Buttons with Icons */}
+            <Grid item xs={12} md={6}>
               <Paper style={{ padding: '16px' }}>
                 <Typography variant="h6">Actions</Typography>
                 <IconButton onClick={handleAddClick} aria-label="add">
@@ -217,5 +219,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-           
-    
