@@ -31,13 +31,7 @@ const activities = [
 ];
 
 // Sidebar content
-const sidebarItems = [
-  { text: 'Dashboard', icon: <DashboardIcon /> },
-  { text: 'Analytics', icon: <AnalyticsIcon /> },
-  { text: 'Sales', icon: <BarChartIcon /> },
-  { text: 'Reports', icon: <ReportIcon /> },
-  { text: 'Settings', icon: <SettingsIcon /> },
-];
+
 
 const drawerWidth = 240;
 
@@ -156,16 +150,7 @@ const Dashboard = () => {
               </Paper>
             </Grid>
 
-            {/* Bar Chart Section */}
-            <Grid item xs={12} md={6}>
-              <Paper style={{ padding: '16px' }}>
-                <Typography variant="h6">Revenue vs Expenses</Typography>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={data}>
-                    <Bar dataKey="revenue" fill="#8884d8" />
-                    <Bar dataKey="expenses" fill="#82ca9d" />
-                    <Tooltip />
-                  </BarChart>
+            
                 </ResponsiveContainer>
               </Paper>
             </Grid>
