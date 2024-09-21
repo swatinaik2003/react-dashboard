@@ -97,4 +97,63 @@ const Dashboard = () => {
     alert("Remove action");
   };
 
-  
+  return (
+    <Box sx={{ display: 'flex', height: '100vh' }}>
+      {/* Sidebar */}
+      <Sidebar />
+
+      {/* Main content */}
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3, height: '100vh', overflow: 'auto' }}
+      >
+        <Container>
+          <Typography variant="h4" gutterBottom>
+            Dashboard Overview
+          </Typography>
+          <Grid container spacing={3}>
+
+            {/* Overview Cards */}
+            <Grid item xs={12} md={3}>
+              <Paper style={{ padding: '16px' }}>
+                <Typography variant="h6">Total Revenue</Typography>
+                <Typography variant="h4">$58,094</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Paper style={{ padding: '16px' }}>
+                <Typography variant="h6">Yearly Sales</Typography>
+                <Typography variant="h4">127</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Paper style={{ padding: '16px' }}>
+                <Typography variant="h6">Earnings</Typography>
+                <Typography variant="h4">10.56%</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Paper style={{ padding: '16px' }}>
+                <Typography variant="h6">Today's Visits</Typography>
+                <Typography variant="h4">18.4k</Typography>
+              </Paper>
+            </Grid>
+
+            {/* Pie Chart Section */}
+            <Grid item xs={12} md={6}>
+              <Paper style={{ padding: '16px' }}>
+                <Typography variant="h6">Invoices Overview</Typography>
+                <ResponsiveContainer width="100%" height={300}>
+                  <PieChart>
+                    <Pie data={data} dataKey="revenue" outerRadius={100}>
+                      {data.map((entry, index) => (
+                        <Cell key={cell-${index}} fill={index % 2 === 0 ? '#8884d8' : '#82ca9d'} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              </Paper>
+            </Grid>
+
+    
